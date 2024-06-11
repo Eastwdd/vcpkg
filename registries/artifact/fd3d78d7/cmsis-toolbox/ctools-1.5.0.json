@@ -1,0 +1,58 @@
+{
+	"id": "tools/open-cmsis-pack/ctools",
+	"version": "1.5.0",
+	"description": "These tools make it easy to create and validate CMSIS-Packs.",
+	"summary": "Arm distributed Open-CMSIS-Pack CLI tools",
+	"contacts": {
+		"Joachim Krech": {
+			"email": "joachim.krech@linaro.org",
+			"role": "publisher"
+		},
+		"ctools": {
+			"email": "open-cmsis-pack-dev@op-lists.linaro.org",
+			"role": "originator"
+		}
+	},
+	"demands": {
+		"windows and x64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/cmsis-toolbox/1.5.0/cmsis-toolbox-windows-amd64.zip",
+				"sha256": "fc6a8732fa57475f1d4476dd2f3b3754d2557009b9c408935f35242805570e78",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		},
+		"linux and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/1.5.0/cmsis-toolbox-linux-amd64.tar.gz",
+				"sha256": "764ad92ec54ce7adf86b88f5648e242108fedb34dbff1949aae867295f8d5806",
+				"strip": 1
+			}
+		},
+		"linux and arm64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/1.5.0/cmsis-toolbox-linux-arm64.tar.gz",
+				"sha256": "4151034501e0c4d150b1ac2c835b06b314c09790c5827df3a869a025520c0d01",
+				"strip": 1
+			}
+		},
+		"osx": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/1.5.0/cmsis-toolbox-darwin-amd64.tar.gz",
+				"sha256": "a208eaab2acf3cc7133e2818ee24c0d492d1f7eafa965663be6a8f6f43960cc6",
+				"strip": 1
+			}
+		},
+		"not windows": {
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		}
+	}
+}

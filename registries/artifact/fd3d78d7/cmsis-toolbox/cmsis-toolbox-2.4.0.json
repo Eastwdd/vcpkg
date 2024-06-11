@@ -1,0 +1,77 @@
+{
+	"id": "tools/open-cmsis-pack/cmsis-toolbox",
+	"version": "2.4.0",
+	"description": "Command-line tools that use software packs to simplify the process of creating, building, managing, and distributing projects.",
+	"summary": "Arm CMSIS-Toolbox",
+	"contacts": {
+		"Joachim Krech": {
+			"email": "joachim.krech@arm.com",
+			"role": "publisher"
+		},
+		"cmsis-toolbox": {
+			"email": "cmsis@arm.com",
+			"role": "originator"
+		}
+	},
+	"demands": {
+		"windows and x64": {
+			"install": {
+				"unzip": "https://artifacts.keil.arm.com/cmsis-toolbox/2.4.0/cmsis-toolbox-windows-amd64.zip",
+				"sha256": "f255c6bb4c35be6fb38a4bbf755da8b4c2ee70874ec2755c824bd2b2b0628f60",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		},
+		"windows and arm64": {
+			"install": {
+				"unzip": "https://artifacts.keil.arm.com/cmsis-toolbox/2.4.0/cmsis-toolbox-windows-arm64.zip",
+				"sha256": "325656ae1ca26a0ee4c77363907a216819f6fc7efbd458167973f9e6544bbb88",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		},
+		"linux and x64": {
+			"install": {
+				"untar": "https://artifacts.keil.arm.com/cmsis-toolbox/2.4.0/cmsis-toolbox-linux-amd64.tar.gz",
+				"sha256": "af8a125062515bb8ae158875e8b5cd329d4fa016cd0493e71dbb7801ea3c28f4",
+				"strip": 1
+			}
+		},
+		"linux and arm64": {
+			"install": {
+				"untar": "https://artifacts.keil.arm.com/cmsis-toolbox/2.4.0/cmsis-toolbox-linux-arm64.tar.gz",
+				"sha256": "27aa605c282cefeaf60e311e0a2984ebccb8f63eaecca6b7f76165be993d46a8",
+				"strip": 1
+			}
+		},
+		"osx and x64": {
+			"install": {
+				"untar": "https://artifacts.keil.arm.com/cmsis-toolbox/2.4.0/cmsis-toolbox-darwin-amd64.tar.gz",
+				"sha256": "24752a07ebfb594c116979157cebdc44fc8cd62c96756a3ae0a82b1fa3584382",
+				"strip": 1
+			}
+		},
+		"osx and arm64": {
+			"install": {
+				"untar": "https://artifacts.keil.arm.com/cmsis-toolbox/2.4.0/cmsis-toolbox-darwin-arm64.tar.gz",
+				"sha256": "8b45ea8971dd635c3a4f87d8aa1b728c131a161d9569d29c615695e0bc727096",
+				"strip": 1
+			}
+		},
+		"not windows": {
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		}
+	}
+}

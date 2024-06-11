@@ -1,0 +1,47 @@
+{
+        "id": "models/arm/avh-fvp",
+        "version": "11.24.24",
+        "description": "Virtualized models of Arm Cortex-M processors, using Fast Models technology.",
+        "summary": "Arm Virtual Hardware for Cortex®-M based on Fast Models",
+        "demands": {
+                "windows and x64": {
+                        "install": {
+                                "unzip": "https://artifacts.tools.arm.com/avh/11.24.24/avh-windows-x86_11.24_24_Win64.zip",
+                                "sha256": "a8eb72e69715b45a0cfe26904f77f69904551339f155be250cfdff7f0e495f2f",
+                                "strip": 1
+                        },
+                        "exports": {
+                                "paths": {
+                                        "PATH": "bin/models"
+                                },
+                                "tools": {
+                                        "AVH_FVP_PLUGINS": "./plugins/"
+                                }
+                        }
+                },
+                "linux and x64": {
+                        "install": {
+                                "untar": "https://artifacts.tools.arm.com/avh/11.24.24/avh-linux-x86_11.24_24_Linux64.tgz",
+                                "sha256": "115d96971ecd4be2e78a226a7574ede6ce6c36b3261e645f1f28a922b336b3dd",
+                                "strip": 1
+                        }
+                },
+                "linux and arm64": {
+                        "install": {
+                                "untar": "https://artifacts.tools.arm.com/avh/11.24.24/avh-linux-aarch64_11.24_24_Linux64_armv8l.tgz",
+                                "sha256": "fed42dedddd34dc0af07425f410c6608a2a4635588dbd20a2451418debe4200f",
+                                "strip": 1
+                        }
+                },
+                "not windows": {
+                        "exports": {
+                                "paths": {
+                                        "PATH": "bin"
+                                },
+                                "tools": {
+                                        "AVH_FVP_PLUGINS": "./plugins/"
+                                }
+                      }
+                }
+        }
+}

@@ -1,0 +1,40 @@
+{
+	"id": "models/arm/avh",
+	"version": "11.21.15",
+	"description": "Ready-to-use models of Arm processors, systems, and third-party hardware.",
+	"summary": "Arm Virtual Hardware (AVH)",
+	"contacts": {
+		"Joachim Krech": {
+			"email": "joachim.krech@linaro.org",
+			"role": "publisher"
+		}
+	},
+	"demands": {
+		"windows and x64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/avh/11.21.15/avh-fvp-cortex-m-windows-amd64.zip",
+				"sha256": "4be100a8750e765c6dd14a8767d36a4a017a3fa452374f56754b14585ad0e92f",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		},
+		"linux and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/avh/11.21.15/avh-fvp-cortex-m-linux-amd64.tar.bz2",
+				"sha256": "ba1e2612ab206985a665b26ccef7ed7e38e8721808f218bd244a890c763531be",
+				"strip": 1
+			}
+		},
+		"not windows": {
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		}
+	}
+}

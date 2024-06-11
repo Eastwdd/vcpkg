@@ -1,0 +1,80 @@
+{
+	"id": "tools/arm/cmsis-core-tools",
+	"version": "5.2.0",
+	"description": "The CMSIS Core Tools (CCT) support the CMSIS-Pack ecosystem and the csolution and cproject formats. ",
+	"summary": "Arm CMSIS Core Tools",
+	"contacts": {
+		"Graham Hammond": {
+			"email": "graham.hammond@arm.com",
+			"role": "publisher"
+		},
+		"ctools": {
+			"email": "support@arm.com",
+			"role": "originator"
+		}
+	},
+	"demands": {
+		"windows": {
+			"exports": {
+    	    	"tools": {
+    	    	  "cmsis": "cmsis.exe"
+   		 		},
+   		   	  	"paths": {
+   		       		"PATH": "."
+  		  		}
+      		}
+		},
+		"windows and x64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/cmsis-core-tools/5.2.0/cmsis-core-tools_5.2.0_Windows_x86_64.zip",
+				"sha256": "b3e7a81dea76d5776c9e8b7ff90c2b6b00282a4f22360528322d75eb9a5d12ee",
+				"strip": 0
+      		}
+		},
+		"windows and arm64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/cmsis-core-tools/5.2.0/cmsis-core-tools_5.2.0_Windows_arm64.zip",
+				"sha256": "39fa29344be7642a11bded7f690b4bf11554b4efe42ee6b4d3af9fa3c519e5b0",
+				"strip": 0
+      		}
+		},
+		"linux and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-core-tools/5.2.0/cmsis-core-tools_5.2.0_Linux_x86_64.tar.gz",
+				"sha256": "d889af300dcba6d98f9e33d285821e9f3dd80360aed47a42e8595b8db0a6d27f",
+				"strip": 0
+			}
+		},
+		"linux and arm64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-core-tools/5.2.0/cmsis-core-tools_5.2.0_Linux_arm64.tar.gz",
+				"sha256": "603b058152cef5c1e30662038e58686ddc06f892ebcf2ee95fdddf34a60ca5cf",
+				"strip": 0
+			}
+		},
+		"osx and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-core-tools/5.2.0/cmsis-core-tools_5.2.0_macOS_x86_64.tar.gz",
+				"sha256": "f374b559faea219ea72be8a33a829c3248d3f08071d0d7add33d3a4fb9deec95",
+				"strip": 0
+			}
+		},
+		"osx and arm64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-core-tools/5.2.0/cmsis-core-tools_5.2.0_macOS_arm64.tar.gz",
+				"sha256": "7d54f0aaa9090a3a299c193d819162f68782027cb42d6d617ad078323245c646",
+				"strip": 0
+			}
+		},
+		"not windows": {
+			"exports": {
+				"tools": {
+    	    		"cmsis": "cmsis"
+   		 		},
+				"paths": {
+					"PATH": "."
+				}
+			}
+		}
+	}
+}

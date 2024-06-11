@@ -1,0 +1,47 @@
+{
+	"id": "models/arm/avh-fvp",
+	"version": "11.22.39",
+	"description": "Virtualized models of Arm Cortex-M processors, using Fast Models technology.",
+	"summary": "Arm Virtual Hardware for Cortex®-M based on Fast Models",
+	"contacts": {
+		"Joachim Krech": {
+			"email": "joachim.krech@arm.com",
+			"role": "publisher"
+		}
+	},
+	"demands": {
+		"windows and x64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/avh/11.22.39/avh-fvp-windows-amd64.zip",
+				"sha256": "1157cc039455195cc40ad212348a2204975e54f808f76b90630405e67b16cb8e",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "bin/models"
+				}
+			}
+		},
+		"linux and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/avh/11.22.39/avh-fvp-linux-amd64.tar.gz",
+				"sha256": "1ebb260e9038a102be9e34dc5d3f892e39114cfb0726cfc2b5bafdd01944b37e",
+				"strip": 1
+			}
+		},
+		"linux and arm64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/avh/11.22.39/avh-fvp-linux-arm64.tar.gz",
+				"sha256": "914f0a80528b08f3a556c6c4e53a6b7602d9835e7e573bd0570ebdc28793f0d4",
+				"strip": 1
+			}
+		},
+		"not windows": {
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		}
+	}
+}

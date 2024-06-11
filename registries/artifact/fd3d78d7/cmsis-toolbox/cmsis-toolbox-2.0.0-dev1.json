@@ -1,0 +1,77 @@
+{
+	"id": "tools/open-cmsis-pack/cmsis-toolbox",
+	"version": "2.0.0-dev1",
+	"description": "Command-line tools that use software packs to simplify the process of creating, building, managing, and distributing projects.",
+	"summary": "Arm CMSIS-Toolbox",
+	"contacts": {
+		"Joachim Krech": {
+			"email": "joachim.krech@arm.com",
+			"role": "publisher"
+		},
+		"cmsis-toolbox": {
+			"email": "cmsis@arm.com",
+			"role": "originator"
+		}
+	},
+	"demands": {
+		"windows and x64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/cmsis-toolbox/2.0.0-dev1/cmsis-toolbox-windows-amd64.zip",
+				"sha256": "cb623005873f0abf051f19c59a43280ee884fe2d547482d2b89bbf0ce17000fe",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		},
+		"windows and arm64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/cmsis-toolbox/2.0.0-dev1/cmsis-toolbox-windows-arm64.zip",
+				"sha256": "7e2580d88498f52e30eb0b16a8d041ae97f2740415454afb8e8ed604543bfae7",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		},
+		"linux and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/2.0.0-dev1/cmsis-toolbox-linux-amd64.tar.gz",
+				"sha256": "4f3ad3ed509d6069077f8f1a2d153eaa59708380a9d4d0305a3e07274a78bf97",
+				"strip": 1
+			}
+		},
+		"linux and arm64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/2.0.0-dev1/cmsis-toolbox-linux-arm64.tar.gz",
+				"sha256": "6b07f84f5d00aa09feed62ca3ce42f041b97aa5bf7294d9b50a4e74f4b99219c",
+				"strip": 1
+			}
+		},
+		"osx and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/2.0.0-dev1/cmsis-toolbox-darwin-amd64.tar.gz",
+				"sha256": "574aeea414bb6e82973609bb695a654ae6ad45afb642ad45fd1f872a77f9e8de",
+				"strip": 1
+			}
+		},
+		"osx and arm64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/2.0.0-dev1/cmsis-toolbox-darwin-arm64.tar.gz",
+				"sha256": "b53ffffcf3e5a2627719c4994f0315cb0956296bc6c19721463c441c84be4e4e",
+				"strip": 1
+			}
+		},
+		"not windows": {
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		}
+	}
+}

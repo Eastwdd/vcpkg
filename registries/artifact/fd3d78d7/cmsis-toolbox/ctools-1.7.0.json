@@ -1,0 +1,77 @@
+{
+	"id": "tools/open-cmsis-pack/ctools",
+	"version": "1.7.0",
+	"description": "These tools make it easy to create and validate CMSIS-Packs.",
+	"summary": "Arm distributed Open-CMSIS-Pack CLI tools",
+	"contacts": {
+		"Joachim Krech": {
+			"email": "joachim.krech@arm.com",
+			"role": "publisher"
+		},
+		"ctools": {
+			"email": "cmsis@arm.com",
+			"role": "originator"
+		}
+	},
+	"demands": {
+		"windows and x64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/cmsis-toolbox/1.7.0/cmsis-toolbox-windows-amd64.zip",
+				"sha256": "973d159d3bdcbeb61882f8a7ee74547748300b09eaaac9461c2e2c24009b6859",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		},
+		"windows and arm64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/cmsis-toolbox/1.7.0/cmsis-toolbox-windows-arm64.zip",
+				"sha256": "5a7f6e5a0c669268690ce9ec50a797b29cc4328cdede407e77522b7b146f89f5",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		},
+		"linux and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/1.7.0/cmsis-toolbox-linux-amd64.tar.gz",
+				"sha256": "09abb36a16dcf3e9b0cee38580117e994bf747589455ab358aafe325808db74f",
+				"strip": 1
+			}
+		},
+		"linux and arm64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/1.7.0/cmsis-toolbox-linux-arm64.tar.gz",
+				"sha256": "9eb0481a001b650a2deed32a25e0c62ffc4c8c8252beb5245acf0252ae9d50af",
+				"strip": 1
+			}
+		},
+		"osx and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/1.7.0/cmsis-toolbox-darwin-amd64.tar.gz",
+				"sha256": "32ad6ffdce24d742b62e3b8a8e075585e09bd1334d10109b05aba5974b4ffd27",
+				"strip": 1
+			}
+		},
+		"osx and arm64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/cmsis-toolbox/1.7.0/cmsis-toolbox-darwin-arm64.tar.gz",
+				"sha256": "ad416b9584329ba92cc7bc5603d698c4aa4d3bc1ea97a327b26e25125c1cc088",
+				"strip": 1
+			}
+		},
+		"not windows": {
+			"exports": {
+				"paths": {
+					"PATH": "bin"
+				}
+			}
+		}
+	}
+}

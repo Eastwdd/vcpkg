@@ -1,0 +1,55 @@
+{
+  "id": "compilers/arm/llvm-embedded",
+  "version": "16.0.0",
+  "description": "An LLVM compiler (clang)-based tool suite for C/C++, and assembly programming on 32-bit Arm Cortex-A, Cortex-M, and Cortex-R processors.",
+  "summary": "LLVM Embedded Toolchain for Arm CPUs",
+  "contacts": {
+    "Jonatan Antoni": {
+      "email": "jonatan.antoni@arm.com",
+      "role": "publisher"
+    }
+  },
+  "demands": {
+    "windows": {
+      "install": {
+        "unzip": "https://artifacts.tools.arm.com/llvm-embedded/16.0.0/LLVMEmbeddedToolchainForArm-16.0.0-Windows-x86_64.zip",
+        "sha256": "f0b7a70845a3cee64918a92667ee157f47a7a0c89ae01e54f75639a3958d81d8",
+        "strip": 1
+      }
+    },
+    "linux and x64": {
+      "install": {
+        "untar": "https://artifacts.tools.arm.com/llvm-embedded/16.0.0/LLVMEmbeddedToolchainForArm-16.0.0-Linux-x86_64.tar.gz",
+        "sha256": "af00387472b15e641cb528905a7c953f3baba0ec168efb4a727770e0bd35016c",
+        "strip": 1
+      }
+    },
+    "linux and arm64": {
+      "install": {
+        "untar": "https://artifacts.tools.arm.com/llvm-embedded/16.0.0/LLVMEmbeddedToolchainForArm-16.0.0-Linux-AArch64.tar.gz",
+        "sha256": "1602acf5c1230bc38e84b7e0a4fda261c5bd55409da890e98b8c116c295819ab",
+        "strip": 1
+      }
+    },
+    "osx": {
+      "install": {
+        "untar": "https://artifacts.tools.arm.com/llvm-embedded/16.0.0/LLVMEmbeddedToolchainForArm-16.0.0-Darwin.tar.gz",
+        "sha256": "ad743e1a217f52c7d588be29ea0835d0a98a92c462bb9488c51fb566be0a3a1e",
+        "strip": 1
+      }
+    },
+    "linux": {
+      "warning": "Ensure libtinfo5 is installed with your system package manager."
+    },
+    "windows, linux, osx": {
+      "exports": {
+        "paths": {
+          "PATH": [ "bin" ]
+        },
+        "tools": {
+          "CLANG_TOOLCHAIN_16_0_0": "./bin/"
+        }
+      }
+    }
+  }
+}

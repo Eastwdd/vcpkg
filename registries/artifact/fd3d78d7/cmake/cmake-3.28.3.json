@@ -1,0 +1,84 @@
+{
+  "id": "tools/kitware/cmake",
+  "version": "3.28.3",
+  "summary": "Kitware's cmake tool",
+  "description": "CMake is an open-source, cross-platform family of tools designed to build, test and package software. CMake is used to control the software compilation process in the compiler environment of your choice.",
+  "contacts": {
+    "Jonatan Antoni": {
+      "email": "jonatan.antoni@arm.com",
+      "role": "publisher"
+    },
+    "Kitware": {
+      "email": "kitware@kitware.com",
+      "role": "originator"
+    }
+  },
+  "demands": {
+    "windows and x64": {
+      "install": {
+        "unzip": "https://cmake.org/files/v3.28/cmake-3.28.3-windows-x86_64.zip",
+        "sha256": "cac7916f7e1e73a25de857704c94fd5b72ba9fe2f055356b5602d2f960e50e5b",
+        "strip": 1
+      }
+    },
+    "windows and x86": {
+      "install": {
+        "unzip": "https://cmake.org/files/v3.28/cmake-3.28.3-windows-i386.zip",
+        "sha256": "411812b6b29ac793faf69bdbd36c612f72659363c5491b9f0a478915db3fc58c",
+        "strip": 1
+      }
+    },
+    "windows and arm64": {
+      "install": {
+        "unzip": "https://cmake.org/files/v3.28/cmake-3.28.3-windows-arm64.zip",
+        "sha256": "cfe023b7e82812ef802fb1ec619f6cfa2fdcb58ee61165fc315086286fe9cdcc",
+        "strip": 1
+      }
+    },
+    "windows": {
+      "exports": {
+        "tools": {
+          "cmake": "bin/cmake.exe",
+          "cmake_gui": "bin/cmake-gui.exe",
+          "ctest": "bin/ctest.exe"
+        },
+        "paths": {
+          "PATH": "bin"
+        }
+      }
+    },
+    "osx": {
+      "install": {
+        "untar": "https://cmake.org/files/v3.28/cmake-3.28.3-macos-universal.tar.gz",
+        "sha256": "d9e2c22fec920a4d1f6b0d0683c035d799475c179c91e41e1a7fbfab610a0305",
+        "strip": 3
+      }
+    },
+    "linux and x64": {
+      "install": {
+        "untar": "https://cmake.org/files/v3.28/cmake-3.28.3-linux-x86_64.tar.gz",
+        "sha256": "804d231460ab3c8b556a42d2660af4ac7a0e21c98a7f8ee3318a74b4a9a187a6",
+        "strip": 1
+      }
+    },
+    "linux and arm64": {
+      "install": {
+        "untar": "https://cmake.org/files/v3.28/cmake-3.28.3-linux-aarch64.tar.gz",
+        "sha256": "bbf023139f944cefe731d944f2864d8ea3ea0c4f9310b46ac72b3cb4e314b023",
+        "strip": 1
+      }
+    },
+    "not windows": {
+      "exports": {
+        "tools": {
+          "cmake": "bin/cmake",
+          "cmake_gui": "bin/cmake-gui",
+          "ctest": "bin/ctest"
+        },
+        "paths": {
+          "PATH": "bin"
+        }
+      }
+    }
+  }
+}

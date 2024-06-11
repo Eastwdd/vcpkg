@@ -1,0 +1,76 @@
+{
+  "id": "compilers/arm/arm-none-eabi-gcc",
+  "version": "12.2.1-mpacbti",
+  "description": "The GNU Arm Embedded Toolchain for C/C++, and assembly programming on 32-bit Arm Cortex-A, Arm Cortex-M, and Arm Cortex-R processors.",
+  "summary": "GCC compiler for Arm CPUs",
+  "contacts": {
+    "Garrett Serack": {
+      "email": "joachim.krech@arm.com",
+      "role": "publisher"
+    }
+  },
+  "demands": {
+    "windows": {
+      "install": {
+        "unzip": "https://artifacts.tools.arm.com/arm-none-eabi-gcc/12.2.mpacbti-rel1/arm-gnu-toolchain-12.2.mpacbti-rel1-mingw-w64-i686-arm-none-eabi.zip",
+        "sha256": "9f5f5492447212001aa8b708e237cdfecb1296ba0f1c699e2aa2fd87249e5b00",
+        "strip": 1
+      },
+      "exports": {
+        "paths": {
+          "PATH": [
+            "bin",
+            "arm-none-eabi/bin"
+          ]
+        },
+        "tools": {
+          "GCC_TOOLCHAIN_12_2_1": "./bin/"
+        }
+      }
+    },
+    "linux and x64": {
+      "install": {
+        "untar": "https://artifacts.tools.arm.com/arm-none-eabi-gcc/12.2.mpacbti-rel1/arm-gnu-toolchain-12.2.mpacbti-rel1-x86_64-arm-none-eabi.tar.bz2",
+        "sha256": "91dee99a3589b32638b87124fd686be49e45fe87ec1d1847328471d54c2eda98",
+        "strip": 1
+      }
+    },
+    "linux and arm64": {
+      "install": {
+        "untar": "https://artifacts.tools.arm.com/arm-none-eabi-gcc/12.2.mpacbti-rel1/arm-gnu-toolchain-12.2.mpacbti-rel1-aarch64-arm-none-eabi.tar.bz2",
+        "sha256": "8a9600b5894c931e96a3ce788fc80135028d23d67d872020666d559c335b53e8",
+        "strip": 1
+      }
+    },
+    "osx and x64": {
+      "install": {
+        "untar": "https://artifacts.tools.arm.com/arm-none-eabi-gcc/12.2.mpacbti-rel1/arm-gnu-toolchain-12.2.mpacbti-rel1-darwin-x86_64-arm-none-eabi.tar.bz2",
+        "sha256": "53b8b9d214f4fa430c4c0815e35ccf401fab43585bb2186174d0ea2dff323a85",
+        "strip": 1
+      }
+    },
+	"osx and arm64": {
+      "install": {
+        "untar": "https://artifacts.tools.arm.com/arm-none-eabi-gcc/12.2.mpacbti-rel1/arm-gnu-toolchain-12.2.mpacbti-rel1-darwin-arm64-arm-none-eabi.tar.bz2",
+        "sha256": "482fb72356ff503e50ecf8d39806be5c42d4a96e5647ede0bfd589ac37a8a030",
+        "strip": 1
+      }
+    },
+    "linux": {
+      "warning": "Ensure libncurses5 is installed with your system package manager before running arm-none-eabi-gdb."
+    },
+    "not windows": {
+      "exports": {
+        "paths": {
+          "PATH": [
+            "bin",
+            "arm-none-eabi/bin"
+          ]
+        },
+        "tools": {
+          "GCC_TOOLCHAIN_12_2_1": "./bin/"
+        }
+      }
+    }
+  }
+}
