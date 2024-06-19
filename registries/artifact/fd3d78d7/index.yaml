@@ -37,8 +37,8 @@ items:
     llvm-embedded/llvm-embedded-17.0.1.json,
     llvm-embedded/llvm-embedded-16.0.0.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0-dev0.json,
-    cmsis-toolbox/cmsis-toolbox-2.3.0.json,
     cmsis-toolbox/cmsis-toolbox-2.2.1.json,
+    cmsis-toolbox/cmsis-toolbox-2.3.0.json,
     cmsis-toolbox/cmsis-toolbox-2.4.0.json,
     cmsis-toolbox/ctools-1.5.0.json,
     cmsis-toolbox/ctools-1.6.0.json,
@@ -388,8 +388,8 @@ indexes:
       2.0.0: [ 46 ]
       2.1.0: [ 45 ]
       2.2.0: [ 44 ]
-      2.2.1: [ 38 ]
-      2.3.0: [ 37 ]
+      2.2.1: [ 37 ]
+      2.3.0: [ 38 ]
       2.4.0: [ 39 ]
       3.20.1: [ 16 ]
       3.20.3: [ 17 ]
