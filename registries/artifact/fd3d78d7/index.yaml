@@ -33,9 +33,9 @@ items:
     ninja/ninja-1.12.0.json,
     ninja/ninja-1.11.1.json,
     ninja/ninja-1.10.2.json,
-    llvm-embedded/llvm-embedded-16.0.0.json,
     llvm-embedded/llvm-embedded-18.1.3.json,
     llvm-embedded/llvm-embedded-17.0.1.json,
+    llvm-embedded/llvm-embedded-16.0.0.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0-dev0.json,
     cmsis-toolbox/cmsis-toolbox-2.2.1.json,
     cmsis-toolbox/cmsis-toolbox-2.3.0.json,
@@ -416,9 +416,9 @@ indexes:
       12.2.1-mpacbti: [ 3 ]
       12.3.1: [ 4 ]
       13.2.1: [ 5 ]
-      16.0.0: [ 33 ]
-      17.0.1: [ 35 ]
-      18.1.3: [ 34 ]
+      16.0.0: [ 35 ]
+      17.0.1: [ 34 ]
+      18.1.3: [ 33 ]
   StringKey/summary:
     keys:
       Arm CMSIS Core Tools: [ 23 ]
