@@ -4,8 +4,8 @@ items:
     arm-compiler/arm-compiler-6.21.0.json,
     arm-compiler/arm-compiler-6.22.0.json,
     arm-none-eabi-gcc/arm-none-eabi-gcc-12.2.1-mpacbti.json,
-    arm-none-eabi-gcc/arm-none-eabi-gcc-12.3.1.json,
     arm-none-eabi-gcc/arm-none-eabi-gcc-13.2.1.json,
+    arm-none-eabi-gcc/arm-none-eabi-gcc-12.3.1.json,
     armdbg/armdbg-6.0.0.json,
     armdbg/armdbg-6.0.1.json,
     armdbg/armdbg-6.0.2.json,
@@ -41,12 +41,12 @@ items:
     cmsis-toolbox/cmsis-toolbox-2.2.1.json,
     cmsis-toolbox/cmsis-toolbox-2.3.0.json,
     cmsis-toolbox/cmsis-toolbox-2.4.0.json,
-    cmsis-toolbox/ctools-1.5.0.json,
     cmsis-toolbox/ctools-1.6.0.json,
+    cmsis-toolbox/ctools-1.5.0.json,
     cmsis-toolbox/ctools-1.7.0.json,
     cmsis-toolbox/ctools-2.0.0-dev0.json,
-    cmsis-toolbox/cmsis-toolbox-2.1.0.json,
     cmsis-toolbox/cmsis-toolbox-2.2.0.json,
+    cmsis-toolbox/cmsis-toolbox-2.1.0.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0-dev3.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0-dev2.json,
@@ -380,8 +380,8 @@ indexes:
       1.2.0: [ 30 ]
       1.3.0: [ 29 ]
       1.4.0: [ 28 ]
-      1.5.0: [ 27, 41 ]
-      1.6.0: [ 42 ]
+      1.5.0: [ 27, 42 ]
+      1.6.0: [ 41 ]
       1.7.0: [ 43 ]
       1.10.2: [ 33 ]
       1.11.1: [ 32 ]
@@ -391,8 +391,8 @@ indexes:
       2.0.0-dev2: [ 49 ]
       2.0.0-dev3: [ 48 ]
       2.0.0: [ 47 ]
-      2.1.0: [ 45 ]
-      2.2.0: [ 46 ]
+      2.1.0: [ 46 ]
+      2.2.0: [ 45 ]
       2.2.1: [ 38 ]
       2.3.0: [ 39 ]
       2.4.0: [ 40 ]
@@ -420,8 +420,8 @@ indexes:
       11.24.24: [ 14 ]
       11.26.11: [ 13 ]
       12.2.1-mpacbti: [ 3 ]
-      12.3.1: [ 4 ]
-      13.2.1: [ 5 ]
+      12.3.1: [ 5 ]
+      13.2.1: [ 4 ]
       16.0.0: [ 36 ]
       17.0.1: [ 35 ]
       18.1.3: [ 34 ]
