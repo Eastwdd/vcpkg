@@ -1,0 +1,73 @@
+{
+	"id": "tools/arm/uv2csolution",
+	"version": "1.5.0",
+	"description": "A converter that reads Keil® μVision® uvprojx and uvmpw files and generates corresponding csolution and cproject files.",
+	"summary": "MDK uVision project converter",
+	"contacts": {
+		"Joachim Krech": {
+			"email": "joachim.krech@arm.com",
+			"role": "publisher"
+		}
+	},
+	"demands": {
+		"windows and x64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/uv2csolution/1.5.0/uv2csolution_1.5.0_windows_amd64.zip",
+				"sha256": "1fc02c9a5f805603fb502f4250610afe615ff445ea318a408fcc0c040e302915",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "."
+				}
+			}
+		},
+		"windows and arm64": {
+			"install": {
+				"unzip": "https://artifacts.tools.arm.com/uv2csolution/1.5.0/uv2csolution_1.5.0_windows_arm64.zip",
+				"sha256": "b52e751c4598d7592166d2659daaa5729bf358c8db73ceed0fb669fe5bb87ffc",
+				"strip": 1
+			},
+			"exports": {
+				"paths": {
+					"PATH": "."
+				}
+			}
+		},
+		"linux and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/uv2csolution/1.5.0/uv2csolution_1.5.0_linux_amd64.tar.gz",
+				"sha256": "ddd8b742e9894b0e22f7b73e94721005abc914459d29c2c96e748da52b56addf",
+				"strip": 1
+			}
+		},
+		"linux and arm64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/uv2csolution/1.5.0/uv2csolution_1.5.0_linux_arm64.tar.gz",
+				"sha256": "aac87179093bd1249aa86307ae3b54a528dc07ba1aba297c3fde58ba2dda9710",
+				"strip": 1
+			}
+		},
+		"osx and x64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/uv2csolution/1.5.0/uv2csolution_1.5.0_darwin_amd64.tar.gz",
+				"sha256": "a5b726f6dc2054114d5002abfb2b4c28dfb80b804e58a7ae1318a4a44f3f5383",
+				"strip": 1
+			}
+		},
+		"osx and arm64": {
+			"install": {
+				"untar": "https://artifacts.tools.arm.com/uv2csolution/1.5.0/uv2csolution_1.5.0_darwin_arm64.tar.gz",
+				"sha256": "fbf4028c90b2e33cf98d450e523b94b82ce28a9d34f520168504856b85d50bbd",
+				"strip": 1
+			}
+		},
+		"not windows": {
+			"exports": {
+				"paths": {
+					"PATH": "."
+				}
+			}
+		}
+	}
+}
