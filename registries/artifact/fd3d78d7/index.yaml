@@ -45,8 +45,8 @@ items:
     cmsis-toolbox/ctools-1.6.0.json,
     cmsis-toolbox/ctools-1.7.0.json,
     cmsis-toolbox/ctools-2.0.0-dev0.json,
-    cmsis-toolbox/cmsis-toolbox-2.2.0.json,
     cmsis-toolbox/cmsis-toolbox-2.1.0.json,
+    cmsis-toolbox/cmsis-toolbox-2.2.0.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0-dev3.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0-dev2.json,
@@ -391,8 +391,8 @@ indexes:
       2.0.0-dev2: [ 49 ]
       2.0.0-dev3: [ 48 ]
       2.0.0: [ 47 ]
-      2.1.0: [ 46 ]
-      2.2.0: [ 45 ]
+      2.1.0: [ 45 ]
+      2.2.0: [ 46 ]
       2.2.1: [ 38 ]
       2.3.0: [ 39 ]
       2.4.0: [ 40 ]
