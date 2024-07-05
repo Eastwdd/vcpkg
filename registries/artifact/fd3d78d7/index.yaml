@@ -49,8 +49,8 @@ items:
     cmsis-toolbox/cmsis-toolbox-2.1.0.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0-dev3.json,
-    cmsis-toolbox/cmsis-toolbox-2.0.0-dev1.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0-dev2.json,
+    cmsis-toolbox/cmsis-toolbox-2.0.0-dev1.json,
     cmsis-toolbox/cmsis-toolbox-2.0.0-dev0.json
   ]
 indexes:
@@ -387,8 +387,8 @@ indexes:
       1.11.1: [ 32 ]
       1.12.0: [ 31 ]
       2.0.0-dev0: [ 44, 51 ]
-      2.0.0-dev1: [ 49 ]
-      2.0.0-dev2: [ 50 ]
+      2.0.0-dev1: [ 50 ]
+      2.0.0-dev2: [ 49 ]
       2.0.0-dev3: [ 48 ]
       2.0.0: [ 47 ]
       2.1.0: [ 46 ]
