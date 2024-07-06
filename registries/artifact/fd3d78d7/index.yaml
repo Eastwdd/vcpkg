@@ -24,9 +24,9 @@ items:
     cmake/cmake-3.28.3.json,
     cmake/cmake-3.25.2.json,
     cmake/cmake-3.24.3.json,
-    cmsis-core-tools/cmsis-core-tools-5.2.0.json,
     cmake/cmake-3.24.2.json,
     uv2csolution/uv2csolution-1.0.0.json,
+    cmsis-core-tools/cmsis-core-tools-5.2.0.json,
     uv2csolution/uv2csolution-1.5.0.json,
     uv2csolution/uv2csolution-1.4.0.json,
     uv2csolution/uv2csolution-1.3.0.json,
@@ -62,9 +62,9 @@ indexes:
       debuggers/arm/armdbg: [ 6, 7, 8, 9, 10, 11, 12 ]
       models/arm/avh: [ 16 ]
       models/arm/avh-fvp: [ 13, 14, 15 ]
-      tools/arm/cmsis-core-tools: [ 24 ]
-      tools/arm/uv2csolution: [ 26, 27, 28, 29, 30, 37 ]
-      tools/kitware/cmake: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
+      tools/arm/cmsis-core-tools: [ 26 ]
+      tools/arm/uv2csolution: [ 25, 27, 28, 29, 30, 37 ]
+      tools/kitware/cmake: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
       tools/ninja-build/ninja: [ 31, 32, 33 ]
       tools/open-cmsis-pack/cmsis-toolbox: [ 38, 39, 40, 45, 46, 47, 48, 49, 50, 51 ]
       tools/open-cmsis-pack/ctools: [ 41, 42, 43, 44 ]
@@ -88,7 +88,7 @@ indexes:
           14,
           15,
           16,
-          24,
+          25,
           26,
           27,
           28,
@@ -110,22 +110,22 @@ indexes:
       arm/armdbg: [ 6, 7, 8, 9, 10, 11, 12 ]
       arm/avh: [ 13, 14, 15, 16 ]
       arm/avh-fvp: [ 13, 14, 15 ]
-      arm/cmsis: [ 24 ]
-      arm/cmsis-core: [ 24 ]
-      arm/cmsis-core-tools: [ 24 ]
+      arm/cmsis: [ 26 ]
+      arm/cmsis-core: [ 26 ]
+      arm/cmsis-core-tools: [ 26 ]
       arm/llvm: [ 34, 35, 36 ]
       arm/llvm-embedded: [ 34, 35, 36 ]
-      arm/uv2csolution: [ 26, 27, 28, 29, 30, 37 ]
+      arm/uv2csolution: [ 25, 27, 28, 29, 30, 37 ]
       armclang: [ 0, 1, 2 ]
       armdbg: [ 6, 7, 8, 9, 10, 11, 12 ]
       avh: [ 13, 14, 15, 16 ]
       avh-fvp: [ 13, 14, 15 ]
       build: [ 31, 32, 33 ]
       build/ninja: [ 31, 32, 33 ]
-      cmake: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
+      cmake: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
       cmsis:
         [
-          24,
+          26,
           38,
           39,
           40,
@@ -141,8 +141,8 @@ indexes:
           50,
           51
         ]
-      cmsis-core: [ 24 ]
-      cmsis-core-tools: [ 24 ]
+      cmsis-core: [ 26 ]
+      cmsis-core-tools: [ 26 ]
       cmsis-pack:
         [
           38,
@@ -173,8 +173,8 @@ indexes:
       compilers/arm/armclang: [ 0, 1, 2 ]
       compilers/arm/llvm: [ 34, 35, 36 ]
       compilers/arm/llvm-embedded: [ 34, 35, 36 ]
-      core: [ 24 ]
-      core-tools: [ 24 ]
+      core: [ 26 ]
+      core-tools: [ 26 ]
       ctools: [ 41, 42, 43, 44 ]
       debuggers: [ 6, 7, 8, 9, 10, 11, 12 ]
       debuggers/arm: [ 6, 7, 8, 9, 10, 11, 12 ]
@@ -184,8 +184,8 @@ indexes:
       embedded: [ 34, 35, 36 ]
       fvp: [ 13, 14, 15 ]
       gcc: [ 3, 4, 5 ]
-      kitware: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
-      kitware/cmake: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
+      kitware: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
+      kitware/cmake: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
       llvm: [ 34, 35, 36 ]
       llvm-embedded: [ 34, 35, 36 ]
       models: [ 13, 14, 15, 16 ]
@@ -308,13 +308,13 @@ indexes:
           50,
           51
         ]
-      tools/arm: [ 24, 26, 27, 28, 29, 30, 37 ]
-      tools/arm/cmsis: [ 24 ]
-      tools/arm/cmsis-core: [ 24 ]
-      tools/arm/cmsis-core-tools: [ 24 ]
-      tools/arm/uv2csolution: [ 26, 27, 28, 29, 30, 37 ]
-      tools/kitware: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
-      tools/kitware/cmake: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
+      tools/arm: [ 25, 26, 27, 28, 29, 30, 37 ]
+      tools/arm/cmsis: [ 26 ]
+      tools/arm/cmsis-core: [ 26 ]
+      tools/arm/cmsis-core-tools: [ 26 ]
+      tools/arm/uv2csolution: [ 25, 27, 28, 29, 30, 37 ]
+      tools/kitware: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
+      tools/kitware/cmake: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
       tools/ninja: [ 31, 32, 33 ]
       tools/ninja-build: [ 31, 32, 33 ]
       tools/ninja-build/ninja: [ 31, 32, 33 ]
@@ -372,10 +372,10 @@ indexes:
       tools/open-cmsis-pack/cmsis: [ 38, 39, 40, 45, 46, 47, 48, 49, 50, 51 ]
       tools/open-cmsis-pack/cmsis-toolbox: [ 38, 39, 40, 45, 46, 47, 48, 49, 50, 51 ]
       tools/open-cmsis-pack/ctools: [ 41, 42, 43, 44 ]
-      uv2csolution: [ 26, 27, 28, 29, 30, 37 ]
+      uv2csolution: [ 25, 27, 28, 29, 30, 37 ]
   SemverKey/version:
     keys:
-      1.0.0: [ 26 ]
+      1.0.0: [ 25 ]
       1.1.0: [ 37 ]
       1.2.0: [ 30 ]
       1.3.0: [ 29 ]
@@ -399,12 +399,12 @@ indexes:
       3.20.1: [ 17 ]
       3.20.3: [ 18 ]
       3.23.4: [ 19 ]
-      3.24.2: [ 25 ]
+      3.24.2: [ 24 ]
       3.24.3: [ 23 ]
       3.25.2: [ 22 ]
       3.28.3: [ 21 ]
       3.28.4: [ 20 ]
-      5.2.0: [ 24 ]
+      5.2.0: [ 26 ]
       6.0.0: [ 6 ]
       6.0.1: [ 7 ]
       6.0.2: [ 8 ]
@@ -427,7 +427,7 @@ indexes:
       18.1.3: [ 34 ]
   StringKey/summary:
     keys:
-      Arm CMSIS Core Tools: [ 24 ]
+      Arm CMSIS Core Tools: [ 26 ]
       Arm CMSIS-Toolbox: [ 38, 39, 40, 45, 46, 47, 48, 49, 50, 51 ]
       Arm Compiler for Embedded: [ 0, 1, 2 ]
       Arm Debugger: [ 6, 7, 8, 9, 10, 11, 12 ]
@@ -436,10 +436,10 @@ indexes:
       Arm Virtual Hardware for Cortex®-M based on Fast Models: [ 13, 14, 15 ]
       GCC compiler for Arm CPUs: [ 3 ]
       GCC compiler for ARM CPUs: [ 4, 5 ]
-      Kitware's cmake tool: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
+      Kitware's cmake tool: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
       LLVM Embedded Toolchain for Arm CPUs: [ 34, 35, 36 ]
       MDK uVision project converter: [ 27, 28, 29 ]
-      MDK μVision project converter: [ 26, 30, 37 ]
+      MDK μVision project converter: [ 25, 30, 37 ]
       Ninja Build: [ 31, 32, 33 ]
     words:
       ARM: [ 4, 5 ]
@@ -462,7 +462,7 @@ indexes:
           14,
           15,
           16,
-          24,
+          26,
           34,
           35,
           36,
@@ -485,7 +485,7 @@ indexes:
       CLI: [ 41, 42, 43, 44 ]
       CMSIS:
         [
-          24,
+          26,
           38,
           39,
           40,
@@ -505,7 +505,7 @@ indexes:
       CMSIS-Toolbox: [ 38, 39, 40, 45, 46, 47, 48, 49, 50, 51 ]
       CPUs: [ 3, 4, 5, 34, 35, 36 ]
       Compiler: [ 0, 1, 2 ]
-      Core: [ 24 ]
+      Core: [ 26 ]
       Cortex: [ 13, 14, 15 ]
       Cortex®-M: [ 13, 14, 15 ]
       Debugger: [ 6, 7, 8, 9, 10, 11, 12 ]
@@ -513,11 +513,11 @@ indexes:
       Fast: [ 13, 14, 15 ]
       GCC: [ 3, 4, 5 ]
       Hardware: [ 13, 14, 15, 16 ]
-      Kitware: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
-      Kitware's: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
+      Kitware: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
+      Kitware's: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
       LLVM: [ 34, 35, 36 ]
       M: [ 13, 14, 15 ]
-      MDK: [ 26, 27, 28, 29, 30, 37 ]
+      MDK: [ 25, 27, 28, 29, 30, 37 ]
       Models: [ 13, 14, 15 ]
       Ninja: [ 31, 32, 33 ]
       Open: [ 41, 42, 43, 44 ]
@@ -526,18 +526,18 @@ indexes:
       Pack: [ 41, 42, 43, 44 ]
       Toolbox: [ 38, 39, 40, 45, 46, 47, 48, 49, 50, 51 ]
       Toolchain: [ 34, 35, 36 ]
-      Tools: [ 24 ]
+      Tools: [ 26 ]
       Virtual: [ 13, 14, 15, 16 ]
-      Vision: [ 26, 30, 37 ]
+      Vision: [ 25, 30, 37 ]
       based: [ 13, 14, 15 ]
-      cmake: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
+      cmake: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
       compiler: [ 3, 4, 5 ]
-      converter: [ 26, 27, 28, 29, 30, 37 ]
+      converter: [ 25, 27, 28, 29, 30, 37 ]
       distributed: [ 41, 42, 43, 44 ]
       for: [ 0, 1, 2, 3, 4, 5, 13, 14, 15, 34, 35, 36 ]
       on: [ 13, 14, 15 ]
-      project: [ 26, 27, 28, 29, 30, 37 ]
-      s: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
-      tool: [ 17, 18, 19, 20, 21, 22, 23, 25 ]
+      project: [ 25, 27, 28, 29, 30, 37 ]
+      s: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
+      tool: [ 17, 18, 19, 20, 21, 22, 23, 24 ]
       tools: [ 41, 42, 43, 44 ]
       uVision: [ 27, 28, 29 ]
