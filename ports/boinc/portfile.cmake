@@ -4,7 +4,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO BOINC/boinc
     REF "client_release/${MAJOR_MINOR}/${VERSION}"
-    SHA512 ed6c90a40e74d891e28fdb99c684f004b90e9fecc22584e61d67a325c0f61039ea7dc823baf321ff4a84fafc96470d6cd903d9b0268c8ff42b3eb54f8c565426
+    SHA512 68b008d8208fe8077726ec49657b76a76f3c30b3ac247cd09cf7c97b2cde126f92048fc812bf2df4cca343566654021f4a0dadb02db0ec8b91d57868cea2387d
     HEAD_REF master
 )
 
@@ -38,6 +38,7 @@ endif()
 vcpkg_cmake_configure(
     SOURCE_PATH ${SOURCE_PATH}
     OPTIONS
+        -DVCPKG_HOST_TRIPLET=${HOST_TRIPLET}
         ${build_options}
 )
 
@@ -48,6 +49,7 @@ file(READ "${CURRENT_PACKAGES_DIR}/share/boinc/boinc-config.cmake" BOINC_CONFIG)
 file(WRITE "${CURRENT_PACKAGES_DIR}/share/boinc/boinc-config.cmake" "
 include(CMakeFindDependencyMacro)
 find_dependency(OpenSSL)
+find_dependency(libzip)
 ${BOINC_CONFIG}
 ")
 

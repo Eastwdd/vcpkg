@@ -13,7 +13,8 @@ set(VCPKG_BUILD_TYPE release)
 set(VCPKG_POLICY_EMPTY_PACKAGE enabled)
 
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://ftp.gnu.org/pub/gnu/gettext/gettext-${VERSION}.tar.gz"
+    URLS "https://ftpmirror.gnu.org/gnu/gettext/gettext-${VERSION}.tar.gz"
+         "https://ftp.gnu.org/pub/gnu/gettext/gettext-${VERSION}.tar.gz"
          "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/gettext/gettext-${VERSION}.tar.gz"
     FILENAME "gettext-${VERSION}.tar.gz"
     SHA512 d8b22d7fba10052a2045f477f0a5b684d932513bdb3b295c22fbd9dfc2a9d8fccd9aefd90692136c62897149aa2f7d1145ce6618aa1f0be787cb88eba5bc09be
@@ -28,6 +29,8 @@ vcpkg_extract_source_archive(SOURCE_PATH
         subdirs.patch
         parallel-gettext-tools.patch
         config-step-order.patch
+        0001-xgettext-Fix-some-test-failures-on-MSVC.patch
+        env.patch # https://cgit.git.savannah.gnu.org/cgit/gnulib.git/commit/lib/localtime.c?id=92cdf62b56462b914193c7770440e505a37c2526
 )
 
 set(subdirs "")
@@ -178,7 +181,7 @@ if(subdirs)
 endif()
 
 if("tools" IN_LIST FEATURES)
-    vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/lib/gettext/user-email" "${CURRENT_INSTALLED_DIR}" "`dirname $0`/../..")
+    vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/lib/gettext/user-email" "${CURRENT_INSTALLED_DIR}" "`dirname $0`/../.." IGNORE_UNCHANGED)
 else()
     # A fast installation of the autopoint tool and data, needed for autoconfig
     include("${CMAKE_CURRENT_LIST_DIR}/install-autopoint.cmake")

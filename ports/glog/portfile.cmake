@@ -2,22 +2,19 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO google/glog
     REF "v${VERSION}"
-    SHA512 7222bb432c2b645238018233b2d18f254156617ef2921d18d17364866a7a3a05533fff1d63fd5033e1e5d3746a11806d007e7a36efaff667a0d3006dee45c278
+    SHA512 2dabac87d44e4fe58beceb31b22be732b47df84c22f1af8c0e7d0f262de939889de1f16025c1256539f2833ef3393bc92034e983aa2886752bb8705801a68630
     HEAD_REF master
     PATCHES
       fix_glog_CMAKE_MODULE_PATH.patch
       glog_disable_debug_postfix.patch
       fix_crosscompile_symbolize.patch
-      fix_cplusplus_macro.patch
 )
 
 vcpkg_check_features(
     OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     FEATURES
         unwind          WITH_UNWIND
-        customprefix    WITH_CUSTOM_PREFIX
-    INVERTED_FEATURES
-        unwind          CMAKE_DISABLE_FIND_PACKAGE_Unwind
+        unwind          VCPKG_LOCK_FIND_PACKAGE_Unwind
 )
 file(REMOVE "${SOURCE_PATH}/glog-modules.cmake.in")
 

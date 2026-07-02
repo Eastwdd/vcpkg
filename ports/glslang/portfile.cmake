@@ -4,7 +4,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO KhronosGroup/glslang
     REF "${VERSION}"
-    SHA512 570d2ff15116f48e195c73d9be1517b05e7c37541af10f6c05779a001e2d0295725349c1f4dd0bcca6f0c7e7e48c5162a60726c3e76cf04619c8e14bd0636ab6
+    SHA512 6e2142da6c5ccb54906395bf1ef6576a017d88c394bf11e66604946f3d8ad1d6c4e7d253ceab79c935b03db6e3bbb109f6e2053bc4bce1373166aa505957cea4
     HEAD_REF master
 )
 
@@ -16,11 +16,11 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
         rtti ENABLE_RTTI
 )
 
-if (ENABLE_GLSLANG_BINARIES)
+if(ENABLE_GLSLANG_BINARIES)
     vcpkg_find_acquire_program(PYTHON3)
     get_filename_component(PYTHON_PATH ${PYTHON3} DIRECTORY)
     vcpkg_add_to_path("${PYTHON_PATH}")
-endif ()
+endif()
 
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
@@ -45,9 +45,9 @@ endif()
 
 vcpkg_copy_pdbs()
 
-if (ENABLE_GLSLANG_BINARIES)
-    vcpkg_copy_tools(TOOL_NAMES glslang glslangValidator spirv-remap AUTO_CLEAN)
-endif ()
+if(ENABLE_GLSLANG_BINARIES)
+    vcpkg_copy_tools(TOOL_NAMES glslang glslangValidator AUTO_CLEAN)
+endif()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 

@@ -4,11 +4,15 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO boostorg/charconv
     REF boost-${VERSION}
-    SHA512 9cfe701bf0b24d5c11e3eaeb6de3693cc69ad2d3c59365e2ac7b5546ead726c476478e05b419d15091d5ae132b280e2a323241d9a9cd74967a23b810d7bfe71d
+    SHA512 fb89934b13ed3ac5dd967ffadaa75a400b9d78efa120874d74533ecfe202dbce8e5783c6cb37d8494e69617bfa80ea828f287cce8ec761c22845754f772bdfbe
     HEAD_REF master
 )
 
 set(FEATURE_OPTIONS "")
+if(CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux" AND VCPKG_TARGET_IS_MINGW)
+    # when cross compile, cmake generates the error try_run() invoked in cross-compiling mode
+    list(APPEND FEATURE_OPTIONS "-DBOOST_CHARCONV_QUADMATH_FOUND_EXITCODE=0")
+endif()
 boost_configure_and_install(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS ${FEATURE_OPTIONS}

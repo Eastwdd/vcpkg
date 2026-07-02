@@ -1,19 +1,17 @@
-# Header only
-vcpkg_buildpath_length_warning(37)
+set(VCPKG_BUILD_TYPE release)  # header-only
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO CGAL/cgal
-    REF v5.6.1
-    SHA512 943413bf3b94da066d47051b22f1c1b66a39a43dad865dd0e4912a9ae6508d9a490bcfe4ef7d662844e9a1ba6e552748fad785b52b2cce98133c2dfdfbfe1a4d
+    REF v${VERSION}
+    SHA512 d49b046ca87ef467efad066a4574aa04faa43941c65f2bc5b0b5e530b1d738d5bdc0f1d8c8a339f5ec49b3567d19fd959239ebe0bc6530bea41a1d4066c63f18
     HEAD_REF master
+    PATCHES
+        # upstream commit from the 6.2.x-branch (planned for CGAL version 6.2.1):
+        # https://github.com/CGAL/cgal/commit/eb2257df4da4c52c75fe384e803d9a6376057b8a
+        # > fix <CGAL/gdb_autoload.h>: end the section with a null byte
+        CGAL-6.2.0-gdb_autoload.patch
 )
-
-vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
-    FEATURES
-        qt WITH_CGAL_Qt5
-)
-
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
@@ -26,7 +24,6 @@ vcpkg_cmake_configure(
     MAYBE_UNUSED_VARIABLES
         CGAL_BUILD_THREE_DOC
         CGAL_HEADER_ONLY
-        WITH_CGAL_Qt5
 )
 
 vcpkg_cmake_install()

@@ -4,13 +4,13 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO aws/aws-sdk-cpp
     REF "${VERSION}"
-    SHA512 826be806ddd87eb452f97df70b19df4194e984775408d8f99246244b6949abcab583e4cbe1ae3bc5d61f3c78267d0e75ea9e69956188ab12e0318344a4314591
+    SHA512 976cf53e9b15d555656474de8d58429b17bd8083ace1003f2f056fdc21732f6fd0a309ff6b3498b5f3675d011e447575387f1e00a05a0ae3487d8f7ad26e5bba
     PATCHES
-        patch-relocatable-rpath.patch
         fix-aws-root.patch
         lock-curl-http-and-tls-settings.patch
         fix_find_curl.patch
-        fix-mingw-compatibility.patch
+        find-dependency.patch
+        configure-binary-dir.patch # https://github.com/aws/aws-sdk-cpp/pull/3459
 )
 
 string(COMPARE EQUAL "${VCPKG_CRT_LINKAGE}" "dynamic" FORCE_SHARED_CRT)
@@ -34,7 +34,6 @@ endif()
 string(REPLACE "awsmigrationhub" "AWSMigrationHub" targets "${FEATURES}")
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
-    DISABLE_PARALLEL_CONFIGURE
     OPTIONS
         ${EXTRA_ARGS}
         "-DENABLE_UNITY_BUILD=ON"
@@ -73,15 +72,6 @@ foreach(AWS_CONFIG IN LISTS AWS_CONFIGS)
     file(READ "${AWS_CONFIG}" _contents)
     file(WRITE "${AWS_CONFIG}" "include(CMakeFindDependencyMacro)\nfind_dependency(aws-cpp-sdk-core)\n${_contents}")
 endforeach()
-vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/share/awssdk/AWSSDKConfig.cmake" "include(${CMAKE_CURRENT_LIST_DIR}/compiler_settings.cmake)" 
-[[include(${CMAKE_CURRENT_LIST_DIR}/compiler_settings.cmake)
-include(CMakeFindDependencyMacro)
-find_dependency(ZLIB)
-find_dependency(CURL)]])
-vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/share/aws-cpp-sdk-core/aws-cpp-sdk-core-config.cmake" "find_dependency(aws-crt-cpp)" 
-[[find_dependency(aws-crt-cpp)
-find_dependency(ZLIB)
-find_dependency(CURL)]])
 
 file(REMOVE_RECURSE
     "${CURRENT_PACKAGES_DIR}/debug/include"

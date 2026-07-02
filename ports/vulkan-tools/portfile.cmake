@@ -2,10 +2,8 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO KhronosGroup/Vulkan-Tools
     REF "vulkan-sdk-${VERSION}"
-    SHA512 d28dd0a83e993058f58ba83c148a3104c1bbe4e731b81bfc934a989dfcdf3cc1b22383bcaee2a34545ddb9b053e00bea3da463d48fa10727a18ee7e34641d1cb
+    SHA512 016bceae9d2caa276a6d7465f53e8a608e94c2c029f5be36c8706f23a0196c1e7bfff60a057c8cd3d39b7c143ece08977a6459500c5da0d9dd29b2fa2cab1f2a
     HEAD_REF main
-    PATCHES
-        fix-parallel-config.patch
 )
 
 if(NOT VCPKG_TARGET_IS_ANDROID)

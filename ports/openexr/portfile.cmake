@@ -2,10 +2,8 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO AcademySoftwareFoundation/openexr
     REF "v${VERSION}"
-    SHA512 6e0a6fdcfae57c6e8b060d9aeed57140d96d39bffe5e40edd6ea5beb06e569323833d07906316ffca05f48e8409d0ea4174e2cd84d554404a4ee432e07d7b5e6
+    SHA512 cbf72c5d1a887a19f24a8e1586b6b7baffa9137d8d6900061a676ecccecd95c729c84f17369c531725921e8177fedc9ef818028acddc99f1bc5b34a2770c538a
     HEAD_REF main
-    PATCHES
-        fix-cmake-package.patch # https://github.com/AcademySoftwareFoundation/openexr/pull/1674
 )
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS OPTIONS
@@ -18,8 +16,9 @@ vcpkg_cmake_configure(
     OPTIONS
         ${OPTIONS}
         -DBUILD_TESTING=OFF
-        -DOPENEXR_INSTALL_EXAMPLES=OFF
         -DBUILD_WEBSITE=OFF
+        -DCMAKE_REQUIRE_FIND_PACKAGE_libdeflate=ON
+        -DOPENEXR_BUILD_EXAMPLES=OFF
         -DOPENEXR_INSTALL_PKG_CONFIG=ON
     OPTIONS_DEBUG
         -DOPENEXR_BUILD_TOOLS=OFF
@@ -34,7 +33,19 @@ vcpkg_fixup_pkgconfig()
 
 if(OPENEXR_INSTALL_TOOLS)
     vcpkg_copy_tools(
-        TOOL_NAMES exrenvmap exrheader exrinfo exrmakepreview exrmaketiled exrmultipart exrmultiview exrstdattr exr2aces
+        TOOL_NAMES
+            exr2aces
+            # not installed: exrcheck
+            exrenvmap
+            exrheader
+            exrinfo
+            exrmakepreview
+            exrmaketiled
+            exrmanifest
+            exrmetrics
+            exrmultipart
+            exrmultiview
+            exrstdattr
         AUTO_CLEAN
     )
 endif()

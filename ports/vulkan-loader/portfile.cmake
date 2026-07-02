@@ -4,14 +4,31 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO KhronosGroup/Vulkan-Loader
     REF "vulkan-sdk-${VERSION}"
-    SHA512 8ec98e0da867f829e048e100a97d7b94a3c40f56f858e3eb81f11f6f58e20e59da6ca8785a9642958ff3b698c618b9968407028cc66dfa0ad296576bf9db45ca
+    SHA512 158602f1527392280744404bdeb80961ab972c076f9a99d5e35ba2ab37b96bd9c8d96041b93763787ec21a8a5b2587e4d40236afa6c4a0bc23255e9b3426ef31
     HEAD_REF main
+    PATCHES
+        link-directfb.patch
+)
+
+vcpkg_find_acquire_program(PYTHON3)
+# Needed to make port install vulkan.pc
+vcpkg_find_acquire_program(PKGCONFIG)
+set(ENV{PKG_CONFIG} "${PKGCONFIG}")
+
+vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
+    FEATURES
+        xcb       BUILD_WSI_XCB_SUPPORT
+        xlib      BUILD_WSI_XLIB_SUPPORT
+        wayland   BUILD_WSI_WAYLAND_SUPPORT
+        directfb  BUILD_WSI_DIRECTFB_SUPPORT
 )
 
 vcpkg_cmake_configure(
   SOURCE_PATH "${SOURCE_PATH}"
   OPTIONS
     -DBUILD_TESTS:BOOL=OFF
+    -DPython3_EXECUTABLE=${PYTHON3}
+    ${FEATURE_OPTIONS}
 )
 vcpkg_cmake_install()
 vcpkg_fixup_pkgconfig()

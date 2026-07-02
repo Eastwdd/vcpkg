@@ -1,8 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO krb5/krb5
-    REF krb5-${VERSION}-final
-    SHA512 184ef8645d7e17f30a8e3d4005364424d2095b3d0c96f26ecef0c2dd2f3a096a0dd40558ed113121483717e44f6af41e71be0e5e079c76a205535d0c11a2ea34
+    REF "krb5-${VERSION}-final"
+    SHA512 ca1e22a0aced71c004a51716a3237c83d683f81ead2456752079a50cd3406c665822f69bbdfd4999d2ff73ffda0922e4e8330c6c02bdb48ca2745f0ff33a88f1
     HEAD_REF master
     PATCHES
         static-deps.diff
@@ -19,6 +19,8 @@ if (VCPKG_TARGET_IS_WINDOWS AND NOT VCPKG_TARGET_IS_MINGW)
         SOURCE_PATH "${SOURCE_PATH}/src"
         PROJECT_NAME Makefile.in
         TARGET prep-windows
+        OPTIONS_RELEASE
+            "NODEBUG=1"
     )
     file(REMOVE_RECURSE "${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}")
     file(COPY "${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-rel/" DESTINATION "${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}")
@@ -30,6 +32,7 @@ if (VCPKG_TARGET_IS_WINDOWS AND NOT VCPKG_TARGET_IS_MINGW)
             "NO_LEASH=1"
         OPTIONS_RELEASE
             "KRB_INSTALL_DIR=${CURRENT_PACKAGES_DIR}"
+            "NODEBUG=1"
         OPTIONS_DEBUG
             "KRB_INSTALL_DIR=${CURRENT_PACKAGES_DIR}/debug"
     )
@@ -51,7 +54,7 @@ if (VCPKG_TARGET_IS_WINDOWS AND NOT VCPKG_TARGET_IS_MINGW)
     )
     vcpkg_copy_tools(
         TOOL_NAMES ${tools}
-        DESTINATION "${CURRENT_PACKAGES_DIR}/tools/${PORT}/bin"        
+        DESTINATION "${CURRENT_PACKAGES_DIR}/tools/${PORT}/bin"
         AUTO_CLEAN
     )
     foreach(tool_name ${tools})
@@ -76,15 +79,15 @@ if (VCPKG_TARGET_IS_WINDOWS AND NOT VCPKG_TARGET_IS_MINGW)
         endforeach()    
     endif()
 else()
-    vcpkg_configure_make(
+    vcpkg_make_configure(
         SOURCE_PATH "${SOURCE_PATH}/src"
-        AUTOCONFIG
+        AUTORECONF
         OPTIONS
             --disable-nls
             --with-tls-impl=no
             "CFLAGS=-fcommon \$CFLAGS"
     )
-    vcpkg_install_make()
+    vcpkg_make_install()
 
     vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/tools/${PORT}/bin/krb5-config" "${CURRENT_INSTALLED_DIR}" [[$(cd "$(dirname "$0")/../../.."; pwd -P)]])
     vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/tools/${PORT}/bin/compile_et" "${CURRENT_INSTALLED_DIR}" [[$(cd "$(dirname "$0")/../../.."; pwd -P)]])
@@ -110,6 +113,10 @@ if(VCPKG_LIBRARY_LINKAGE STREQUAL "static")
         "${CURRENT_PACKAGES_DIR}/debug/lib/krb5/"
         "${CURRENT_PACKAGES_DIR}/lib/krb5/"
     )
+endif()
+
+if(VCPKG_BUILD_TYPE)
+  file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug")
 endif()
 
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/NOTICE")

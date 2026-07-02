@@ -2,7 +2,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO free-audio/clap
     REF "${VERSION}"
-    SHA512 9113673a911d023ea29d9cb246fbd7e82b4baccf4df5eb63ffe2605cc65543f82cb3a66982803e26f9ecfc8c159508470608b1d3b47009965094fbcdede49cf5
+    SHA512 5637edee7e9d63b7c7eafd0a9f25e6ed4e3670412802578ef1749cde4d16d63ec3f776e233a847b747a8db2e23ae4c6c3eeac84fb18d14f93a47cdf9a11e346b
     HEAD_REF main
 )
 
@@ -11,10 +11,9 @@ vcpkg_cmake_configure(
 )
 
 vcpkg_cmake_install()
-vcpkg_cmake_config_fixup(
-    CONFIG_PATH "lib/cmake/clap"
-)
+vcpkg_cmake_config_fixup(CONFIG_PATH "lib/cmake/clap")
 vcpkg_fixup_pkgconfig()
 
-file(INSTALL "${SOURCE_PATH}/LICENSE" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}" RENAME copyright)
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+
+vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
